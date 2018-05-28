@@ -1,10 +1,13 @@
 var unirest = require('unirest');
 
 const urlPrefix = "http://";
-const url = "172.16.30.156:9100";
+let url = "10.10.100.13:9100";
 
 function indexRouter(req, res, next) {
-
+    if (global.durl !== undefined) {
+        url = global.durl;
+    }
+    console.log("sending message to "+ urlPrefix+url);
     return send(req,res,(response) =>{
 
         res.writeHead(200,response.headers);
