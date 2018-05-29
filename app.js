@@ -32,10 +32,10 @@ app.use(function (req, res, next) {
 
 app.listen(3001, (error, data) => {
     global.url = "10.10.100.13:9100";
-    console.log("--the defualt  destination address is http://" + global.url);
-    rl.question('do you want change the destination address Y/N?', (answer) => {
+    console.log("--the default  destination address is http://" + global.url);
+    rl.question('--do you want change the destination address Y/N?', (answer) => {
         if (answer.toLowerCase() === 'y') {
-            rl.question('the address (like 127.0.0.1:3000)', (answer1) => {
+            rl.question('--the address (like 127.0.0.1:3000)', (answer1) => {
                 global.durl = answer1.toString();
                 rl.close();
                 console.log("listen 3001");
